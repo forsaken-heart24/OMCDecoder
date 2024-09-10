@@ -42,7 +42,7 @@ int main(int argc, char**argv){
             inplace = true;
         }
         else if (strcmp(arg, "-i") == 0 || strcmp(arg, "--in-place") == 0){
-            cout << "Hello, CSCDecoder works..\n" << endl;
+            std::cout << "Hello, CSCDecoder works..\n";
             exit(0);
         }
         else {
