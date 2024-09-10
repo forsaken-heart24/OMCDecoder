@@ -14,4 +14,4 @@ jobs:
         run: |
           [ -f "./cscdecoder" ] && rm -rf ./cscdecoder
           clang++ -lz -I./include decoder.cpp -o cscdecoder
-          ./cscdecoder --test || : ig
+          ./cscdecoder --test || : ig 
