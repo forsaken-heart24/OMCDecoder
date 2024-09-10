@@ -1,0 +1,19 @@
+name: Test to see if it compiles or not.
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build the binary and check if it works or not.
+        run: |
+          echo "Building the binary to check if it works or not."
+          [ -f "./cscdecoder" ] && rm -rf ./cscdecoder
+          clang++ -lz -I./include decoder.cpp -o cscdecoder
+          ./cscdecoder --test
+          exit 0
